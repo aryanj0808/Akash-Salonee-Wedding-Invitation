@@ -4,7 +4,7 @@
 
 /* ===================== CONFIG ===================== */
 const WEDDING_DATE = new Date("2026-07-26T16:50:00+05:30").getTime(); // 4:50 PM IST
-const VENUE_QUERY  = "Yashodip Mangal Karyalaya Koregaon Satara";
+const VENUE_QUERY  = "Yashodeep Mangal Karyalaya Koregaon Satara";
 const GOOGLE_MAPS_LINK =
   "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(VENUE_QUERY);
 
@@ -141,7 +141,7 @@ const I18N = {
     invite:"We cordially invite you to witness the beginning of our forever<br>and celebrate the wedding ceremony of",
     groom:"Akash", bride:"Salonee", with:"with",
     sonOf:"S/o", daughterOf:"D/o",
-    dateLine:"Sunday · 26 July 2026", cityLine:"Yashodip Mangal Karyalaya, Satara", scroll:"Scroll",
+    dateLine:"Sunday · 26 July 2026", cityLine:"Yashodeep Mangal Karyalaya, Satara", scroll:"Scroll",
     momentsTitle:"Our Moments", momentsCopy:"A glimpse of the journey that brought us here.",
     shubhVivah:"॥ Shubh Vivah ॥", countingDown:"Counting down to our special moment",
     scratchTitle:"Scratch the card to reveal our special day",
@@ -480,12 +480,12 @@ $("#calendarBtn").addEventListener("click", () => {
     "&text=" + encodeURIComponent("Akash & Salonee — Wedding (Vivah)") +
     "&dates=20260726T112000Z/20260726T132000Z" +
     "&details=" + encodeURIComponent("With the blessings of our families. Vivah Muhurta at 4:50 PM.") +
-    "&location=" + encodeURIComponent("Yashodip Mangal Karyalaya, Satara Road (Palshi), Ta. Koregaon, Dist. Satara");
+    "&location=" + encodeURIComponent("Yashodeep Mangal Karyalaya, Satara Road (Palshi), Ta. Koregaon, Dist. Satara");
   window.open(url, "_blank", "noopener");
 });
 
 /* ===================== SHARE ===================== */
-const shareText = "You're invited to the wedding of Akash & Salonee — Sunday, 26 July 2026, Yashodip Mangal Karyalaya, Satara. 💍";
+const shareText = "You're invited to the wedding of Akash & Salonee — Sunday, 26 July 2026, Yashodeep Mangal Karyalaya, Satara. 💍";
 const shareUrl = location.href;
 $("#shareWhatsApp").addEventListener("click", () =>
   window.open("https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl), "_blank", "noopener"));

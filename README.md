@@ -6,7 +6,7 @@ ornate calligraphy. Self-contained static site (no build step) — ready for
 WhatsApp sharing, GitHub Pages, or installing to a phone's home screen.
 
 **Sunday · 26 July 2026 · 4:50 PM Muhurta**
-Yashodip Mangal Karyalaya, Satara Road (Palshi), Ta. Koregaon, Dist. Satara
+Yashodeep Mangal Karyalaya, Satara Road (Palshi), Ta. Koregaon, Dist. Satara
 
 ## Preview locally
 Open `index.html` in a browser. (For the PWA / service worker to work you
