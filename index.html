@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d9e5c5" />
+  <meta name="description" content="Wedding invitation of Akash & Salonee — 26 July 2026, Yashodip Mangal Karyalaya, Satara" />
+  <meta property="og:title" content="Akash & Salonee | Wedding Invitation" />
+  <meta property="og:description" content="Together with our families, we invite you — Sunday, 26 July 2026 at Yashodip Mangal Karyalaya, Satara." />
+  <meta property="og:type" content="website" />
+  <title>Akash & Salonee | Wedding Invitation</title>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+
+  <!-- ===================== ENVELOPE / TAP TO OPEN ===================== -->
+  <div class="envelope-screen" id="envelopeScreen">
+    <div class="env-decor" id="envDecor" aria-hidden="true"></div>
+
+    <div class="env-wrap">
+      <button class="env" id="envelope" type="button" aria-label="Tap to open invitation">
+        <div class="env-body">
+          <div class="env-floral env-floral-top" aria-hidden="true"></div>
+          <div class="env-floral env-floral-bottom" aria-hidden="true"></div>
+        </div>
+        <div class="env-lid"></div>
+        <div class="wax-seal"><span>A <em>&amp;</em> S</span></div>
+      </button>
+      <h2 class="env-title">You're Invited</h2>
+      <p class="env-sub" data-i18n="tapOpen">Tap the envelope to open your invitation</p>
+    </div>
+  </div>
+
+  <!-- ===================== FLOATING FLOWERS ===================== -->
+  <div class="floating-flowers" id="floatingFlowers" aria-hidden="true"></div>
+
+  <!-- ===================== CONFETTI CANVAS ===================== -->
+  <canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== TOP CONTROLS ===================== -->
+  <div class="top-controls" id="topControls">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <button type="button" data-lang="mr">मराठी</button>
+    </div>
+    <button class="ctrl-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Dark / light mode">🌙</button>
+  </div>
+
+  <!-- ===================== MUSIC ===================== -->
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Toggle background music" title="Play / pause music">
+    <span class="music-icon" id="musicIcon">🔊</span>
+  </button>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8e9e2b3f6.mp3?filename=indian-sitar-110480.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===================== PAGE ===================== -->
+  <div class="page" id="page">
+
+    <!-- HERO -->
+    <header class="hero section">
+      <div class="botanic bt-tl" aria-hidden="true">🌿</div>
+      <div class="botanic bt-tr" aria-hidden="true">🌸</div>
+      <div class="botanic bt-bl" aria-hidden="true">🍃</div>
+      <div class="botanic bt-br" aria-hidden="true">🌷</div>
+
+      <div class="hero-inner">
+        <div class="ganesh fade-seq" style="--d:.1s" aria-hidden="true">ॐ</div>
+        <p class="sacred fade-seq" style="--d:.3s" data-i18n="mantra">॥ श्री गणेशाय नमः ॥</p>
+        <p class="invite fade-seq" style="--d:.55s" data-i18n="invite">We cordially invite you to witness the beginning of our forever<br>and celebrate the wedding ceremony of</p>
+
+        <div class="names fade-seq" style="--d:.8s">
+          <span class="name" data-i18n="groom">Akash</span>
+          <div class="parents-mini">
+            <p><span data-i18n="sonOf">S/o</span> Mr. Shivaji Laxman Sabale</p>
+            <p>&amp; Mrs. Sheetal Shivaji Sabale</p>
+          </div>
+          <span class="joiner" data-i18n="with">with</span>
+          <span class="name" data-i18n="bride">Salonee</span>
+          <div class="parents-mini">
+            <p><span data-i18n="daughterOf">D/o</span> Mr. Amil Sampat Pawar</p>
+            <p>&amp; Mrs. Sujata Amil Pawar</p>
+          </div>
+        </div>
+
+        <div class="hero-meta fade-seq" style="--d:1.1s">
+          <span data-i18n="dateLine">Sunday · 26 July 2026</span>
+          <span class="dot">✿</span>
+          <span data-i18n="cityLine">Yashodip Mangal Karyalaya, Satara</span>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true"><span data-i18n="scroll">Scroll</span><div class="scroll-arrow">˅</div></div>
+      </div>
+    </header>
+
+    <!-- MOMENTS SLIDESHOW (animated photos from Google Drive) -->
+    <section class="section moments">
+      <p class="eyebrow">✿</p>
+      <h2 class="section-title" data-i18n="momentsTitle">Our Moments</h2>
+      <p class="section-copy" data-i18n="momentsCopy">A glimpse of the journey that brought us here.</p>
+
+      <div class="slideshow" id="slideshow" aria-label="Photo slideshow">
+        <div class="slide-stage" id="slideStage"></div>
+        <button class="slide-nav slide-prev" id="slidePrev" type="button" aria-label="Previous photo">‹</button>
+        <button class="slide-nav slide-next" id="slideNext" type="button" aria-label="Next photo">›</button>
+        <div class="slide-dots" id="slideDots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- SAVE THE DATE — SCRATCH TO REVEAL -->
+    <section class="section savedate" id="savedate">
+      <p class="sd-hint" data-i18n="scratchTitle">Scratch the card to reveal our special day</p>
+      <p class="floral-sep" aria-hidden="true">✽</p>
+      <div class="scratch-wrap">
+        <div class="scratch-stage" id="scratchStage" aria-label="Scratch to reveal the wedding date">
+          <div class="sd-panel">
+            <p class="sd-eyebrow" data-i18n="saveTheDate">Save the Date</p>
+            <h2 class="sd-date" data-i18n="dateShort">26th July 2026</h2>
+            <p class="sd-sub" data-i18n="vivahMuhurta">Vivah Muhurta · 4:50 PM</p>
+          </div>
+          <canvas class="scratch-canvas" id="scratchCanvas"></canvas>
+        </div>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><strong id="days">00</strong><span data-i18n="days">Days</span></div>
+          <div><strong id="hours">00</strong><span data-i18n="hrs">Hrs</span></div>
+          <div><strong id="minutes">00</strong><span data-i18n="min">Min</span></div>
+          <div><strong id="seconds">00</strong><span data-i18n="sec">Sec</span></div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- EVENTS -->
+      <section class="section events">
+        <h2 class="section-title" data-i18n="celebrations">Events Schedule</h2>
+        <p class="floral-sep" aria-hidden="true">✽</p>
+
+        <div class="event-grid" id="eventGrid">
+          <article class="event-card" data-photo="0" data-tint="haldi">
+            <div class="ec-body">
+              <h3 data-i18n="haldi">Haldi</h3>
+              <p class="ec-sub" data-i18n="haldiSub">A joyful morning of haldi, blessings and laughter</p>
+              <span class="ec-floral" aria-hidden="true">✽</span>
+              <div class="ec-line"><em data-i18n="dateLabel">Date</em><b>Sun · 26 July 2026</b></div>
+              <div class="ec-line"><em data-i18n="timeLabel">Time</em><b>11:00 AM onwards</b></div>
+              <div class="ec-line"><em data-i18n="venueLabel">Venue</em><b>Yashodip Mangal Karyalaya, Satara</b></div>
+            </div>
+            <div class="ec-photo" aria-hidden="true"></div>
+          </article>
+
+          <article class="event-card" data-photo="1" data-tint="vivah">
+            <div class="ec-body">
+              <h3 data-i18n="vivah">Vivah</h3>
+              <p class="ec-sub" data-i18n="vivahSub">The sacred seven vows under the floral mandap</p>
+              <span class="ec-floral" aria-hidden="true">✽</span>
+              <div class="ec-line"><em data-i18n="dateLabel">Date</em><b>Sun · 26 July 2026</b></div>
+              <div class="ec-line"><em data-i18n="timeLabel">Time</em><b>4:50 PM (Muhurta)</b></div>
+              <div class="ec-line"><em data-i18n="venueLabel">Venue</em><b>Yashodip Mangal Karyalaya, Satara</b></div>
+            </div>
+            <div class="ec-photo" aria-hidden="true"></div>
+          </article>
+
+          <article class="event-card" data-photo="2" data-tint="pooja">
+            <div class="ec-body">
+              <h3 data-i18n="pooja">Pooja</h3>
+              <p class="ec-sub" data-i18n="poojaSub">A blessing ceremony to complete the celebrations</p>
+              <span class="ec-floral" aria-hidden="true">✽</span>
+              <div class="ec-line"><em data-i18n="dateLabel">Date</em><b>Tue · 28 July 2026</b></div>
+              <div class="ec-line"><em data-i18n="timeLabel">Time</em><b data-i18n="evening">Evening</b></div>
+              <div class="ec-line"><em data-i18n="venueLabel">Venue</em><b>Vaduth, Ta. Satara</b></div>
+            </div>
+            <div class="ec-photo" aria-hidden="true"></div>
+          </article>
+        </div>
+
+        <div class="cta-row">
+          <button class="button ghost" id="calendarBtn" type="button">📅 <span data-i18n="addCalendar">Add to Google Calendar</span></button>
+        </div>
+      </section>
+
+      <!-- FAMILIES -->
+      <section class="section families">
+        <div class="fam-top">
+          <h2 class="section-title" data-i18n="noblePresence">Awaiting Your Noble Presence</h2>
+          <p class="floral-sep" aria-hidden="true">✽</p>
+          <p class="section-copy" data-i18n="noblePresenceCopy">Because meeting two souls requires twice the fun — and you!</p>
+        </div>
+        <div class="fam-bottom">
+          <p class="fam-eyebrow" data-i18n="withLove">With Love</p>
+          <h2 class="section-title" data-i18n="theFamilies">The Families</h2>
+          <p class="floral-sep" aria-hidden="true">✽</p>
+
+          <div class="fam-grid">
+            <div class="family-card">
+              <p class="fam-side" data-i18n="groomSide">Groom's Side</p>
+              <p class="floral-sep small" aria-hidden="true">✽</p>
+              <ul>
+                <li>Mrs. Sheetal &amp; Mr. Shivaji Laxman Sabale <em>(Parents)</em></li>
+                <li>Tuktabai &amp; Laxman Maruti Sabale</li>
+                <li>Mangal &amp; Dilip Ramchandra Sabale</li>
+                <li>Manda &amp; Sampat Ramchandra Sabale</li>
+                <li>Manisha &amp; Jaysingh Ramchandra Sabale</li>
+                <li>Vidyarani &amp; Rahul Sadashiv Sabale</li>
+                <li>Madhavi &amp; Kishor Prakash Jadhav <em>(Mama-Mami)</em></li>
+              </ul>
+              <small>Sabale (Nangare Patil) Family · Vaduth, Satara</small>
+            </div>
+            <div class="family-card">
+              <p class="fam-side" data-i18n="brideSide">Bride's Side</p>
+              <p class="floral-sep small" aria-hidden="true">✽</p>
+              <ul>
+                <li>Mrs. Sujata &amp; Mr. Amil Sampat Pawar <em>(Parents)</em></li>
+                <li>Granddaughter of Late Shri. Sampat Hari Pawar</li>
+                <li>Sarika &amp; Sandip Dilip Sabale</li>
+                <li>Pooja &amp; Prashant Dilip Sabale</li>
+                <li>Latika &amp; Kapil Sampat Sabale</li>
+                <li>Rutuja &amp; Pratik Rajendra Dhage</li>
+                <li>Sangita &amp; Vivek Sarjerao Kadam</li>
+              </ul>
+              <small>Pawar Family</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="section gallery">
+        <h2 class="section-title" data-i18n="gallery">Photo Gallery</h2>
+        <p class="floral-sep" aria-hidden="true">✽</p>
+        <p class="section-copy" data-i18n="galleryCopy">A glimpse of our moments together.</p>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </section>
+
+      <!-- VENUE -->
+      <section class="section venue">
+        <h2 class="section-title" data-i18n="venueTitle">The Wedding Venue</h2>
+        <p class="floral-sep" aria-hidden="true">✽</p>
+        <div class="venue-card">
+          <div class="map-embed">
+            <iframe id="mapFrame" title="Venue map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <div class="venue-info">
+            <h3>Yashodip Mangal Karyalaya</h3>
+            <p>Satara Road (Palshi)<br>Ta. Koregaon · Dist. Satara</p>
+            <p><strong>📅 <span data-i18n="dateLine">Sunday · 26 July 2026</span></strong><br><strong>🕓 4:50 PM (Muhurta)</strong></p>
+            <a class="button" href="#" id="mapLink" target="_blank" rel="noopener">✈ <span data-i18n="getDirections">Get Directions</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHARE -->
+      <section class="section share">
+        <h2 class="section-title" data-i18n="shareTitle">Share the Joy</h2>
+        <p class="floral-sep" aria-hidden="true">✽</p>
+        <p class="section-copy" data-i18n="shareCopy">Help us spread the happiness — share this invitation.</p>
+        <div class="share-row">
+          <button class="share-btn wa" id="shareWhatsApp" type="button">🟢 WhatsApp</button>
+          <button class="share-btn native" id="shareNative" type="button">📤 <span data-i18n="share">Share</span></button>
+          <button class="share-btn copy" id="copyLink" type="button">🔗 <span data-i18n="copyLink">Copy Link</span></button>
+        </div>
+      </section>
+    </main>
+
+    <!-- CLOSING FOOTER -->
+    <footer class="closing-footer">
+      <p class="fam-eyebrow light" data-i18n="withLove">With Love</p>
+      <h2 class="footer-names"><span>Akash</span><em>&amp;</em><span>Salonee</span></h2>
+      <p class="footer-flower" aria-hidden="true">💐</p>
+      <p class="footer-date" data-i18n="dateShort">26th July 2026</p>
+      <p class="footer-hash">#AKASHKISALONEE</p>
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img class="lb-img" id="lbImg" alt="Gallery photo" />
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

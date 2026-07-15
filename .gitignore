@@ -1,0 +1,13 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.vscode/
+.idea/
+
+# temp / build
+_preview.html
+_ev.html
+_sd*.html
+node_modules/

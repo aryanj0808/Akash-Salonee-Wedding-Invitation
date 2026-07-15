@@ -1,0 +1,14 @@
+{
+  "name": "Akash & Salonee — Wedding Invitation",
+  "short_name": "Akash & Salonee",
+  "description": "Wedding invitation — 26 July 2026, Yashodip Mangal Karyalaya, Satara",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#d9e5c5",
+  "theme_color": "#d9e5c5",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
