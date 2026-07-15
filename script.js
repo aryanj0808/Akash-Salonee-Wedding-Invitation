@@ -8,64 +8,27 @@ const VENUE_QUERY  = "Yashodip Mangal Karyalaya Koregaon Satara";
 const GOOGLE_MAPS_LINK =
   "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(VENUE_QUERY);
 
-/* ---- PHOTOS (Google Drive file IDs) ----
-   Pulled from the shared Drive folder. Add / remove IDs freely.
-   These power the animated slideshow, the event-card photos and the gallery. */
-const PHOTOS = [
-  "12UrzMDVS-2ozJeA2EGQA6bjF5zAo27uX","12K1wpguFooWv41-MbJdBIFSWcxgZ687o","1OlTrX-doHiFB4iof0wqcBR6CAhRk45bm",
-  "1v1uRfTWziChnxoJmeS630mniOrIkEvla","18E6J-LXEVBnHp9R99DKVKOwnlaZ5kWUu","1iUGEQ63U3FTMwRbmMoYhnTQdMaGZFe2D",
-  "1qgHxdUWkMerA-zTbAA7673JcT1HdjCiw","1FWhUoY3B7EF7u39GGGwUmx8EPqt49vIG","12lzwnfs90lxw3_SJ1xp-YvyawUA7LEN2",
-  "1nRbvWZXtssB1KF2p4WYz3imsGyjLVRW8","1TlzlptaQt_9NQzGrlEXX2yae5vN2gAcK","1OD1jWDfq9rZNtEXEVgO_YIwE2n9Jz8HC",
-  "1SoaHXk3i4lI9QTX4xLE4dLTq0hkqF9N7","1AlrhS4byOdlhgCSINF--okpiNAtcTGl9","1rTpWMkUND8uKRa6R-Iboy88mEP-TRasD",
-  "15hOYp3f9-kDHZLwOjxk4JViI7ax9govt","1tONQYS65x2KnRwEuXrlNKi85FgttQ1Wn","1W9oNjIdYbScCKj9eInPOZUU5YadU_vU9",
-  "1S9RGWP5L6fQ7yL97yeIUaOWWf9VQR7wf","1aW9_iaorGNKdNQ5owT4uxKtye47-eLcZ","19bFoEA2zyd3HYVNQ_M8S9lXleCRx2YGF",
-  "1Ukwixsx_LL_qaXbi44V2nnvKNofbRohZ","1ZTC8jdJdIEHPZdWDORPRuhdJH0XwgxYK","1wy9sH_jRcYF0HdQbQQGz3nyEpI1LhNHa",
-  "1vnYRcfsCHgkVHLjHSFm3V3f-CSvdEP-R","1P7mU-kyS963NiVXcfaQKCtb7uB7pCJyt","1RT-MDaG-Oa4o5dR5oDGcfsFDGdxvAAxs",
-  "1uT3Y3wE_KjJPIiI72pUdL8qUJVbYOWkb","1evgwdy3yKS_3Ft6HralbUJhjBvDcu1ob","1Mgs8qQt2j2e47G3p43wbUoDHYhZetm5j",
-  "1ysn4KC7Jl13DIJS6csSll2_Cf2-HIBs2","1EGqSRMfsFOX_g-X2CPYfg6UgdEdcczTO","1v_SJEcT7KvR2AGsNVpodBtE5BdbAavJ3",
-  "1LFjC6qSGtWYYTxbzEeuqJ7lxMAlD5A5K","1YnegBDpFhwykknb3hjk3oxu78b53yyPY","1tB9ncLnXozw4SXmZP8oCL4vZZ15cAif3",
-  "1vT3R5w78h47-KTbGtQQexpP1VgV4EhBm","1SVQIO7VAFgcwL3hKvqFDjh3n6kuAoSoP","1ZIjLQZWq5a0cX9DMHUkJW8J6IFrgecC3",
-  "1Q7xiyEwvRKLwI-QlflLUuWZztS5vnJOD","1QUdZEgeZpA3eYXlFb2yNnWfdmxtB0BtT","1bS8TI2qE-Iqf0RkhzMpCsVxyvv00jSrL",
-  "1s7aChoqW16pBNxWwYswnGgVS3yBPUZ7N","1yZUZ3NdQPQlHZhfGLl0c_lotyGU_fdjN","1XT-Ta6XEk03qTlSu2GRRrPK_Fm5SlwM4",
-  "1B_6QAwsIptHfAlESya5uiwHerAAb0eW4","1Pe1R-ZRZ7cMo9OQucz7woRFzMyjrv8sx","1u_EgSTRMUJvnlJ1-5u2u6zjSE-CoyCvw",
-  "1stihY4uWLKa5CBeV4I6zeX4mihD_DOs6","1FqBPc3sIaol2E33wSp4cUUPlZYQGDKbB","1tgCPZ55DWIPVq1Gnf5CpUq1wZDXQ5ggJ",
-  "12lh50cF-flDMWOECn6POXbEKsgpQ1ITS","1xWJw0Bz8iQyawqVhCRY1SsMYIx7-Z6kg","1O8I-webNM0yLKSnzXQDmINuKeVjTb7IJ",
-  "1Ax-8kgwRlztYjDe8CtqE4mX8cOz1RHGZ","1w37imUok26BBzx_kOsVh0N0ZWWFAPfl-","14mZmq6SWTJ_dtEnpyXQrYhpgFLK-s344",
-  "1bSUa6XfTYYWQ-LTQMSXwG0sDD0jX1JEr","1QLsiXf2spXzjERzZdPwDihIrv5P4YsSR","1_qfu2fVPZBB0mDZCC0IFwYXjBNaTOMcm",
-  "1lmlRbboWyt1eyK3QUqEQZkbpIICnuN4c","15EHLJE_2DdpKsJG-I7Dm1vRb9bg640QI","1Omb64GDPAFD8-dRjBt1g6os3At4colA8",
-  "1Wq_JKXNPMU7qdEHDYIbCT9-KzS-vAqTY","1Rp8F8YJubsG0p3tZy_HHJ5l16gNTCPfg","1CStoWZLwnyQZKZtXBG2AZYLttl8cr9aA",
-  "10xZnmi5B_36WZRfvDFkr2gx8barTrsGb","1T3r0t1IB1fWgfTX-zD25Iu8CU9DzzwkR","1iWAvP2sXDD2VsTnMzJ2Mrd52gYhfBDEg",
-  "12uc8MJWF37A6ZuZyIGhd-uQNX-YaD4NT","1kjspJANyi44dg6AIof5bviH-EWgKZL0Z","10wnAve677IXRw-3EICWjNWb3Z55B52l4",
-  "1rKfDPMWpvx78I2CbPTh7xf9WaJVPR36Q","1vaXV-RvORbSpcvM1HnXT2Gy-rxaommRK","1E429QQJjCloTr63TMxascCRcxxfhFcFt",
-  "1cX2dboOpy9VYQV7KQATQd2swEoaFlc3I","1CST0mmG8RN-1XkD7mbV8yUN6flPVQrx7","1YFHwKx0HtGzILIIRtks4VCSmNulqD8oL",
-  "1jZ3IGGEjGJWov35VLrS5grTpfjkxZKVv","15h5gLRk79tsEKlbvkkX-JT2Tkd42vLOL","1vr8Yw5LemEQl3BwrFwexEXgXoBiIX9I7",
-  "1RpI-nNhh-3mk_UJJ3tDQrcsrQp48Emav","1YsCZRxQl1T_uSWPDz305zN1ZERReh_iI","16H_O3-f3vA1to-brBhpvzg43MLl3OBVz",
-  "1Um4oFrgtmwIxvZDX8dHwzEx8pMZhqti6","1lTn5NoOmP5sb4NMdLpJ2L3rXLHhHaCmL","14x74QleGdpxo11mytseXNPhLNLM44p09",
-  "1BaWJ6bnZrGHPP27LBpzMgAqUqmCL-En5"
+/* ---- MOMENTS (local, web-optimized couple photos) ----
+   Curated shots for the "Our Moments" slideshow. Fully self-contained —
+   no Google Drive / network dependency. Add or remove files freely
+   (drop web-sized images in images/moments/ and list them here). */
+const MOMENTS = [
+  "images/moments/m01.jpg","images/moments/m02.jpg","images/moments/m03.jpg",
+  "images/moments/m04.jpg","images/moments/m05.jpg","images/moments/m06.jpg",
+  "images/moments/m07.jpg","images/moments/m08.jpg","images/moments/m09.jpg",
+  "images/moments/m10.jpg","images/moments/m11.jpg","images/moments/m12.jpg",
+  "images/moments/m13.jpg","images/moments/m14.jpg"
 ];
-const driveImg = (id, w) => `https://drive.google.com/thumbnail?id=${id}&sz=w${w || 1000}`;
-/* even spread of `count` items across an array */
-function spread(arr, count) {
-  if (arr.length <= count) return arr.slice();
-  const out = [];
-  for (let i = 0; i < count; i++) out.push(arr[Math.round(i * (arr.length - 1) / (count - 1))]);
-  return out;
-}
-const SLIDES  = spread(PHOTOS, 14);              // slideshow
-const GALLERY = spread(PHOTOS, 12);              // gallery grid
-const EVENT_PHOTOS = spread(PHOTOS, 3);          // Drive fallback — one per event card
 
-/* ---- THEMED EVENT IMAGES ----
-   Drop your AI-generated ceremony photos into the `images/` folder using
-   these exact file names and they appear automatically. If a file is
-   missing, the card falls back to the matching Drive engagement photo above.
-   (Generate them from an engagement photo with the prompts in
-   docs/event-image-prompts.md — any image tool such as Google Gemini / etc.) */
+/* ---- THEMED EVENT IMAGES ---- (local files in images/)
+   Drop ceremony photos into images/ with these names and they appear
+   automatically; if one is missing, the card falls back to EVENT_FALLBACK. */
 const EVENT_IMAGES = {
   0: "images/Haldi.png",   // Haldi card
   1: "images/Vivah.png",   // Vivah card
   2: "images/Pooja.png"    // Pooja card
 };
+const EVENT_FALLBACK = ["images/moments/m04.jpg","images/moments/m10.jpg","images/moments/m11.jpg"];
 
 /* ===================== SHORTHANDS ===================== */
 const $  = (s) => document.querySelector(s);
@@ -434,12 +397,12 @@ const slideDots  = $("#slideDots");
 let slideEls = [], slideLoaded = [], slideIndex = 0, slideTimer = null, slideStarted = false;
 
 function buildSlideshow() {
-  if (!SLIDES.length) {
-    slideStage.innerHTML = '<div class="slide-empty"><span>📷</span>Add your photo IDs in <b>script.js</b><br>(the PHOTOS list)</div>';
+  if (!MOMENTS.length) {
+    slideStage.innerHTML = '<div class="slide-empty"><span>📷</span>Add photos to <b>images/moments/</b><br>and list them in script.js (MOMENTS)</div>';
     $("#slidePrev").style.display = $("#slideNext").style.display = "none";
     return;
   }
-  SLIDES.forEach((id, i) => {
+  MOMENTS.forEach((src, i) => {
     const slide = document.createElement("div");
     slide.className = "slide";
     const img = document.createElement("img");
@@ -457,7 +420,7 @@ function buildSlideshow() {
 }
 function loadSlide(i) {
   if (i < 0 || i >= slideEls.length || slideLoaded[i]) return;
-  slideEls[i].querySelector("img").src = driveImg(SLIDES[i], 1400);
+  slideEls[i].querySelector("img").src = MOMENTS[i];
   slideLoaded[i] = true;
 }
 function showSlide(i) {
@@ -503,55 +466,13 @@ $$(".event-card").forEach((card) => {
   if (!ph) return;
   const sources = [];
   if (EVENT_IMAGES[idx]) sources.push(EVENT_IMAGES[idx]);      // local themed image
-  const id = EVENT_PHOTOS[idx % EVENT_PHOTOS.length];
-  if (id) sources.push(driveImg(id, 900));                     // Drive fallback
+  const fb = EVENT_FALLBACK[idx % EVENT_FALLBACK.length];
+  if (fb) sources.push(fb);                                    // local fallback photo
   setCardPhoto(card, ph, sources);
 });
 
-/* ===================== GALLERY + LIGHTBOX ===================== */
-const galleryGrid = $("#galleryGrid");
-const lightbox = $("#lightbox"), lbImg = $("#lbImg");
-let lbIndex = 0;
-function buildGallery() {
-  galleryGrid.innerHTML = "";
-  if (GALLERY.length) {
-    GALLERY.forEach((id, i) => {
-      const img = document.createElement("img");
-      img.src = driveImg(id, 600); img.loading = "lazy"; img.alt = "Wedding photo " + (i+1);
-      img.addEventListener("error", () => img.remove());
-      img.addEventListener("click", () => openLightbox(i));
-      galleryGrid.appendChild(img);
-    });
-  } else {
-    for (let i = 0; i < 4; i++) {
-      const d = document.createElement("div");
-      d.className = "g-empty";
-      d.innerHTML = "<span>📷</span>Add your photos<br>(see README)";
-      galleryGrid.appendChild(d);
-    }
-  }
-}
-function openLightbox(i) {
-  lbIndex = i; lbImg.src = driveImg(GALLERY[i], 1600);
-  lightbox.classList.add("open"); lightbox.setAttribute("aria-hidden","false");
-}
-function closeLightbox() { lightbox.classList.remove("open"); lightbox.setAttribute("aria-hidden","true"); }
-function lbStep(n) { if (!GALLERY.length) return; lbIndex = (lbIndex + n + GALLERY.length) % GALLERY.length; lbImg.src = driveImg(GALLERY[lbIndex],1600); }
-$("#lbClose").addEventListener("click", closeLightbox);
-$("#lbPrev").addEventListener("click", () => lbStep(-1));
-$("#lbNext").addEventListener("click", () => lbStep(1));
-lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener("keydown", (e) => {
-  if (!lightbox.classList.contains("open")) return;
-  if (e.key === "Escape") closeLightbox();
-  if (e.key === "ArrowLeft") lbStep(-1);
-  if (e.key === "ArrowRight") lbStep(1);
-});
-buildGallery();
-
-/* ===================== MAP ===================== */
+/* ===================== DIRECTIONS LINK ===================== */
 $("#mapLink").href = GOOGLE_MAPS_LINK;
-$("#mapFrame").src = "https://www.google.com/maps?q=" + encodeURIComponent(VENUE_QUERY) + "&output=embed";
 
 /* ===================== ADD TO GOOGLE CALENDAR ===================== */
 $("#calendarBtn").addEventListener("click", () => {

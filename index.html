@@ -186,73 +186,20 @@
         </div>
       </section>
 
-      <!-- FAMILIES -->
-      <section class="section families">
-        <div class="fam-top">
-          <h2 class="section-title" data-i18n="noblePresence">Awaiting Your Noble Presence</h2>
-          <p class="floral-sep" aria-hidden="true">✽</p>
-          <p class="section-copy" data-i18n="noblePresenceCopy">Because meeting two souls requires twice the fun — and you!</p>
-        </div>
-        <div class="fam-bottom">
-          <p class="fam-eyebrow" data-i18n="withLove">With Love</p>
-          <h2 class="section-title" data-i18n="theFamilies">The Families</h2>
-          <p class="floral-sep" aria-hidden="true">✽</p>
-
-          <div class="fam-grid">
-            <div class="family-card">
-              <p class="fam-side" data-i18n="groomSide">Groom's Side</p>
-              <p class="floral-sep small" aria-hidden="true">✽</p>
-              <ul>
-                <li>Mrs. Sheetal &amp; Mr. Shivaji Laxman Sabale <em>(Parents)</em></li>
-                <li>Tuktabai &amp; Laxman Maruti Sabale</li>
-                <li>Mangal &amp; Dilip Ramchandra Sabale</li>
-                <li>Manda &amp; Sampat Ramchandra Sabale</li>
-                <li>Manisha &amp; Jaysingh Ramchandra Sabale</li>
-                <li>Vidyarani &amp; Rahul Sadashiv Sabale</li>
-                <li>Madhavi &amp; Kishor Prakash Jadhav <em>(Mama-Mami)</em></li>
-              </ul>
-              <small>Sabale (Nangare Patil) Family · Vaduth, Satara</small>
-            </div>
-            <div class="family-card">
-              <p class="fam-side" data-i18n="brideSide">Bride's Side</p>
-              <p class="floral-sep small" aria-hidden="true">✽</p>
-              <ul>
-                <li>Mrs. Sujata &amp; Mr. Amil Sampat Pawar <em>(Parents)</em></li>
-                <li>Granddaughter of Late Shri. Sampat Hari Pawar</li>
-                <li>Sarika &amp; Sandip Dilip Sabale</li>
-                <li>Pooja &amp; Prashant Dilip Sabale</li>
-                <li>Latika &amp; Kapil Sampat Sabale</li>
-                <li>Rutuja &amp; Pratik Rajendra Dhage</li>
-                <li>Sangita &amp; Vivek Sarjerao Kadam</li>
-              </ul>
-              <small>Pawar Family</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- GALLERY -->
-      <section class="section gallery">
-        <h2 class="section-title" data-i18n="gallery">Photo Gallery</h2>
-        <p class="floral-sep" aria-hidden="true">✽</p>
-        <p class="section-copy" data-i18n="galleryCopy">A glimpse of our moments together.</p>
-        <div class="gallery-grid" id="galleryGrid"></div>
-      </section>
-
       <!-- VENUE -->
-      <section class="section venue">
-        <h2 class="section-title" data-i18n="venueTitle">The Wedding Venue</h2>
+      <section class="section venue" id="venue">
+        <p class="venue-eyebrow" data-i18n="venueTitle">The Wedding Venue</p>
+        <h2 class="venue-name">Yashodip Mangal Karyalaya</h2>
         <p class="floral-sep" aria-hidden="true">✽</p>
-        <div class="venue-card">
-          <div class="map-embed">
-            <iframe id="mapFrame" title="Venue map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          </div>
-          <div class="venue-info">
-            <h3>Yashodip Mangal Karyalaya</h3>
-            <p>Satara Road (Palshi)<br>Ta. Koregaon · Dist. Satara</p>
-            <p><strong>📅 <span data-i18n="dateLine">Sunday · 26 July 2026</span></strong><br><strong>🕓 4:50 PM (Muhurta)</strong></p>
-            <a class="button" href="#" id="mapLink" target="_blank" rel="noopener">✈ <span data-i18n="getDirections">Get Directions</span></a>
-          </div>
+        <p class="venue-addr">
+          <span class="venue-pin" aria-hidden="true">📍</span>
+          Satara Road (Palshi),<br>Ta. Koregaon · Dist. Satara,<br>Maharashtra
+        </p>
+        <div class="venue-frame">
+          <img class="venue-hall" src="images/venue-hall.jpg" alt="Yashodip Mangal Karyalaya" loading="lazy" />
+          <a class="button venue-dir" href="#" id="mapLink" target="_blank" rel="noopener">
+            <span aria-hidden="true">📍</span> <span data-i18n="getDirections">Get Directions</span>
+          </a>
         </div>
       </section>
 
@@ -278,14 +225,6 @@
       <p class="footer-hash">#AKASHKISALONEE</p>
       <p class="footer-credit">Designed &amp; Created by <span>AJ</span></p>
     </footer>
-  </div>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
-    <img class="lb-img" id="lbImg" alt="Gallery photo" />
-    <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
   </div>
 
   <script src="script.js"></script>

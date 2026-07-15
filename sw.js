@@ -1,5 +1,5 @@
 /* Service worker — offline caching for the invitation */
-const CACHE = "akash-salonee-v3";
+const CACHE = "akash-salonee-v4";
 const ASSETS = [
   "./",
   "./index.html",

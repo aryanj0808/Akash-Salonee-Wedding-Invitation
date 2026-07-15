@@ -1,18 +1,22 @@
-THEMED EVENT PHOTOS
-===================
+IMAGES — all local, no Google Drive dependency
+================================================
 
-The Events Schedule cards read these files (already in place):
-
+Event-card photos (Events Schedule):
   Haldi.png   ->  Haldi card
   Vivah.png   ->  Vivah (wedding) card
   Pooja.png   ->  Pooja card
+  (If one is missing, the card falls back to a photo from moments/.)
 
-To replace one, just overwrite the file with the same name (any of
-.png/.jpg works — if you change the extension, update the paths in the
-EVENT_IMAGES block near the top of ../script.js).
+Slideshow photos ("Our Moments"):
+  moments/m01.jpg ... m14.jpg   (web-optimized, ~1400px, curated couple shots)
+  The list lives in EVENT_FALLBACK / MOMENTS near the top of ../script.js.
 
-- Faces are kept near the top of the crop (background-position: center 20%).
-  If a couple sits lower in your image, tell me and I'll nudge that per card.
-- If a file is missing, the card falls back to a Drive engagement photo.
+Optional venue backdrop:
+  venue.jpg   ->  becomes the background of the Wedding Venue section
+                  (drop a landscape photo of the hall here; optional).
 
-Generation prompts: ../docs/event-image-prompts.md
+To change slideshow photos: add web-sized JPGs to moments/ and update the
+MOMENTS array in ../script.js. Keep them small (~1200-1400px, quality ~82)
+so the page loads fast for guests.
+
+Full-resolution originals are kept separately in the "ENGEGAMENT EDIT" folder.

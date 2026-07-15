@@ -37,8 +37,7 @@ straight from the file.)
 - 🌸 Floating **flowers & butterflies**
 - 🎵 **Background music** with play/pause
 - ⏳ Live **countdown** to 26 July 2026, 4:50 PM
-- 👪 **The Families** — Groom's & Bride's sides
-- 📷 **Photo gallery** with lightbox (arrow-key navigation)
+- ✋ **Scratch-to-reveal** Save the Date + party-popper confetti
 - 📍 **Google Maps** venue + **Get Directions** button
 - 📱 **Share** buttons — WhatsApp, native share, copy link
 - 🌙 **Dark / Light** mode toggle (remembers your choice)
@@ -48,29 +47,26 @@ straight from the file.)
 
 ---
 
-## Photos (Google Drive)
-The slideshow, event-card photos and gallery all read from the **`PHOTOS`**
-list near the top of `script.js`. It is **already filled in** with the 92
-image file IDs from your shared Drive folder, so photos appear automatically.
+## Photos (all local — no Google Drive dependency)
+Every image is a local file in `images/`, so the site is fully self-contained
+and works offline:
 
-The images are loaded through Google Drive's thumbnail endpoint:
-`https://drive.google.com/thumbnail?id=<FILE_ID>&sz=w1600`
+- **`images/moments/m01.jpg … m14.jpg`** — the "Our Moments" slideshow
+  (curated, web-optimized couple photos). Listed in the `MOMENTS` array at the
+  top of `script.js`.
+- **`images/Haldi.png`, `Vivah.png`, `Pooja.png`** — the event-card photos
+  (`EVENT_IMAGES` in `script.js`). If one is missing, the card falls back to a
+  photo from `moments/` (`EVENT_FALLBACK`).
+- **`images/venue.jpg`** *(optional)* — a photo of the hall becomes the Wedding
+  Venue section backdrop when present.
 
-> ⚠️ For the photos to be visible to guests, the Drive folder (or the
-> individual files) must be shared as **"Anyone with the link → Viewer"**.
+### To change the slideshow photos
+1. Drop web-sized JPGs into `images/moments/` (keep them ~1200–1400px wide,
+   quality ~82 — small files load fast for guests).
+2. List them in the `MOMENTS` array in `script.js`.
 
-### To change which photos are used
-Edit the `PHOTOS` array in `script.js`. To add a new photo:
-1. In Google Drive, right-click the image → **Share** → *"Anyone with the link"* → **Copy link**:
-   `https://drive.google.com/file/d/`**`1AbCd...XyZ`**`/view?usp=sharing`
-2. Copy the bold middle part — that's the **file ID** — and add it to `PHOTOS`.
-
-The site then picks:
-- **14** evenly-spread photos for the slideshow,
-- **12** for the gallery grid,
-- **3** for the Haldi / Vivah / Pooja event cards.
-
-Change these counts in `script.js` (`SLIDES`, `GALLERY`, `EVENT_PHOTOS`).
+Full-resolution originals are kept outside the site in the `ENGEGAMENT EDIT`
+folder (not part of this repo).
 
 ## Other quick edits (all in `script.js`, top of file)
 - `WEDDING_DATE` — date & time of the muhurta
