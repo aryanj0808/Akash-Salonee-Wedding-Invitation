@@ -291,6 +291,9 @@ body.locked{overflow:hidden}
 .footer-flower{font-size:26px;margin:6px 0}
 .footer-date{font-family:var(--font-serif);font-style:italic;color:var(--gold-soft);font-size:20px;margin:6px 0}
 .footer-hash{font-family:var(--font-serif);letter-spacing:4px;color:#cdbfa6;font-size:14px;margin:10px 0 0}
+.footer-credit{margin:24px auto 0;padding-top:16px;border-top:1px solid #ffffff1f;max-width:220px;
+  font-family:var(--font-serif);font-style:italic;letter-spacing:1px;color:#b7a98d;font-size:13px}
+.footer-credit span{font-family:var(--font-script);font-style:normal;color:var(--gold-soft);font-size:22px;letter-spacing:1px;margin-left:3px;vertical-align:-2px}
 
 /* ===================== RESPONSIVE ===================== */
 @media(max-width:900px){
